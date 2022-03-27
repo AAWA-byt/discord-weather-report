@@ -1,0 +1,26 @@
+{
+  "name": "deep-defaults",
+  "description": "Recursive version of _.defaults",
+  "version": "1.0.5",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d5/deep-defaults"
+  },
+  "homepage": "https://github.com/d5/deep-defaults",
+  "author": {
+    "name" : "Daniel Kang",
+    "email" : "me@daniel.gs"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "jshint": "2.5.x",
+    "mocha": "1.20.x"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/jshint lib && node_modules/.bin/jshint test && node_modules/.bin/mocha test"
+  },
+  "license": "MIT"
+}

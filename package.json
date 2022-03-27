@@ -1,0 +1,19 @@
+{
+  "name": "weatherapi-request",
+  "version": "1.0.0",
+  "description": "Node JS application that sends a discord webhook with weather api request",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Wagner",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "fs": "^0.0.1-security",
+    "hookcord": "^2.0.2",
+    "nightmare": "^2.8.0",
+    "openweather-apis": "^4.4.2",
+    "request": "^2.88.2"
+  }
+}

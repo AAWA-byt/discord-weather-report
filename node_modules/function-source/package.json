@@ -1,0 +1,12 @@
+{
+  "name": "function-source",
+  "version": "0.1.0",
+  "description": "get a function's source",
+  "keywords": ["source", "function"],
+  "dependencies": {},
+  "repository": "git://github.com/yields/function-source.git",
+  "bugs": "https://github.com/yields/function-source/issues",
+  "author": "Amir Abu Shareb",
+  "files": ["index.js"],
+  "license": "MIT"
+}
