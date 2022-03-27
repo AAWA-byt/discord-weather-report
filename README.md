@@ -37,7 +37,7 @@ sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an 
 - AAWA-byt
 
 # License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AAWA-byt/discord-weather-report/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AAWA-byt/discord-weather-report/blob/main/LICENSE) file for details.
 
 
 
