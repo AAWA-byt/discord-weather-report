@@ -2,7 +2,7 @@ const hookcord = require('hookcord');
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
-function send_webhook(author_name, icon, title, color, field_1_title, field_1_value, field_2_title, field_2_value, field_3_title, field_3_value, field_4_title, field_4_value, field_5_title, field_5_value) {
+function send_webhook(author_name, icon, title, color, field_1_title, field_1_value, field_2_title, field_2_value, field_3_title, field_3_value, field_4_title, field_4_value, field_5_title, field_5_value, field_6_title, field_6_vaule) {
 
     const Hook = new hookcord.Hook()
     var time = new Date()
@@ -37,6 +37,10 @@ function send_webhook(author_name, icon, title, color, field_1_title, field_1_va
                 {
                     "name": field_5_title,
                     "value": field_5_value
+                },
+                {
+                    "name": field_6_title,
+                    "value": field_6_vaule
                 }
             ]
         }]
