@@ -33,6 +33,10 @@ sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an 
 ![2022-03-27 19_17_12-webscraper-discordwebhook – config json](https://user-images.githubusercontent.com/76434239/160295859-afebe9a8-04b0-41ff-b835-fd37ee143194.png)
 
 
+## Help
+If there should be any problems please leave an [issue](https://github.com/AAWA-byt/discord-weather-report/issues) and I will look forward to help you.
+
+
 # Authors
 - AAWA-byt
 
