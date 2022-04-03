@@ -41,4 +41,4 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
         console.log("[WeatherAPI] Request was succesfully >> " + new Date());   // log when request is done + date
 
     });
-}, config.time);   // execute every 10 seconds
+}, config.time);  // execute time intervall
