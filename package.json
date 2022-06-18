@@ -13,6 +13,7 @@
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "hookcord": "^2.0.2",
+    "mysql": "^2.18.1",
     "nightmare": "^2.8.0",
     "openweather-apis": "^4.4.2",
     "request": "^2.88.2"
