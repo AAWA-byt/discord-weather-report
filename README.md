@@ -36,7 +36,8 @@ sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an 
 Currently there is a website in work, where you can quickly look up weather data without using nodejs or discord.
 
 ## Help
-If there should be any problems please leave an [issue](https://github.com/AAWA-byt/discord-weather-report/issues) and I will look forward to help you.
+If there should be any problems please leave an [issue](https://github.com/AAWA-byt/discord-weather-report/issues) or send me an email   <a href="mailto:support@aaronwagner.earth">support@aaronwagner.earth</a>
+ and I will look forward to help you.
 
 
 # Authors
