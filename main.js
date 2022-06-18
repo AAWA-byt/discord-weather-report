@@ -42,3 +42,6 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
 
     });
 }, config.time);  // execute time intervall
+
+
+    App.start();
