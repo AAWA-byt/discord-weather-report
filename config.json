@@ -5,7 +5,14 @@
   "city": "New York City",
   "id": "5128581",
   "time": "",
+
+  "webapp_port": "",
+
+  "host": "",
+  "user": "",
+  "password": "",
   "port": ""
+
 }
 
 
