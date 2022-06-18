@@ -1,12 +1,13 @@
 const express = require("express");
 const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 const app = express();
 
 function start() {
 
+    const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
+
     // start express applicaiton
-    app.listen(config.port, () => {
+    app.listen(config.webapp_port, () => {
         console.log("Webapp started!")
         console.log("Port" + config.port)
         console.log("Date: " + new Date())
