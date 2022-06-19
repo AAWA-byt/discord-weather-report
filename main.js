@@ -1,5 +1,5 @@
-const {send_webhook} = require("./Functions/Webhook");
-const {start} = require("./App")
+const {send_webhook} = require("./functions/Webhook");
+const {start} = require("./app")
 const request = require('request');
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
