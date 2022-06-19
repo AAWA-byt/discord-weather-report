@@ -1,4 +1,4 @@
-const {send_webhook} = require("./functions/Webhook");
+const {send_webhook} = require("./functions/webhook");
 const {start} = require("./app")
 const request = require('request');
 const fs = require('fs');
