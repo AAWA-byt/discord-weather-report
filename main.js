@@ -1,4 +1,5 @@
 const {send_webhook} = require("./Functions/Webhook");
+const {start} = require("./App")
 const request = require('request');
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
@@ -44,4 +45,4 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
 }, config.time);  // execute time intervall
 
 
-    App.start();
+    start();
