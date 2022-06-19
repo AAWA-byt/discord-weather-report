@@ -1,6 +1,7 @@
 const express = require("express");
-const fs = require('fs');
 const app = express();
+const fs = require('fs');
+const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
 function start() {
 
@@ -10,7 +11,7 @@ function start() {
     app.listen(config.webapp_port, () => {
         console.log("______________________________________")
         console.log("Webapp started!")
-        console.log("Port" + config.port)
+        console.log("Port: " + config.webapp_port)
         console.log("Date: " + new Date())
         console.log("______________________________________")
 
@@ -22,8 +23,6 @@ function start() {
     app.get("/", (req, res) => {
         res.sendFile(__dirname + "index.html");
     });
-
 }
-
 
 module.exports = { start }   // export method for using it in main class
