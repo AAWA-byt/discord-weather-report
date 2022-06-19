@@ -6,11 +6,11 @@
   "id": "5128581",
   "time": "",
 
-  "webapp_port": "",
+  "webapp_port": "6060",
 
   "host": "",
   "user": "",
-  "password": "",
+  "password": "***",
   "port": ""
 
 }
