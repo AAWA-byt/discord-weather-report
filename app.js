@@ -8,9 +8,11 @@ function start() {
 
     // start express applicaiton
     app.listen(config.webapp_port, () => {
+        console.log("______________________________________")
         console.log("Webapp started!")
         console.log("Port" + config.port)
         console.log("Date: " + new Date())
+        console.log("______________________________________")
 
     });
 
