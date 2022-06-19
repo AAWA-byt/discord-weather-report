@@ -18,7 +18,7 @@ function start() {
 
 // rendering the index.html file
     app.get("/", (req, res) => {
-        res.sendFile(__dirname + "/webapp/index.html");
+        res.sendFile(__dirname + "index.html");
     });
 
 }
