@@ -11,6 +11,12 @@ let id = config.id;
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&id${id}=&units=metric&lang=de&appid=${apiKey}`  // api request link
 
 
+console.log("______________________________________")
+console.log("Application started...")
+console.log("Name: discord-weather-report")
+console.log("Author: AAWA-byt")
+console.log(new Date());
+
 var executeIntervall = setInterval(function() {     // method for repeating request
 
     request(url, function (err, response, body) {
@@ -38,8 +44,8 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
 
         }
 
-        console.log("-----------------------------------------------------------------------------------------------------------")
-        console.log("[WeatherAPI] Request was succesfully >> " + new Date());   // log when request is done + date
+        console.log("[WeatherAPI] Request was succesfully >> " + new Date());
+        console.log("______________________________________")  // log when request is done + date
 
     });
 }, config.time);  // execute time intervall
