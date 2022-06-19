@@ -4,7 +4,6 @@ const request = require('request');
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
-
 let apiKey = config.key;
 let city = config.city;
 let id = config.id;
@@ -42,6 +41,16 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
                 "Cloudiness :cloud:", clouds + "%",
                 "Wind speed :wind_blowing_face: ", wind + "m/s")
 
+            let raw_data = {
+                temp: "" + temp,
+                like: "" + like,
+                vis: "" + vis,
+                clouds: "" + clouds,
+                wind: "" + wind
+            }
+
+            let data = JSON.stringify(raw_data);
+            fs.writeFileSync('data.json', data);
         }
 
         console.log("[WeatherAPI] Request was succesfully >> " + new Date());
