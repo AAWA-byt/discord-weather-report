@@ -49,6 +49,7 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
                 wind: "" + wind
             }
 
+            // write data from api request into json file
             let data = JSON.stringify(raw_data);
             fs.writeFileSync('data.json', data);
         }
@@ -58,6 +59,5 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
 
     });
 }, config.time);  // execute time intervall
-
 
     start();
