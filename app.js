@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
-function start() {
+function start_webserver() {
 
     const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
@@ -25,4 +25,4 @@ function start() {
     });
 }
 
-module.exports = { start }   // export method for using it in main class
+module.exports = { start_webserver }   // export method for using it in main class
