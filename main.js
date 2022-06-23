@@ -1,5 +1,5 @@
 const {send_webhook} = require("./functions/webhook");
-const {start} = require("./app")
+const {start_webserver} = require("./app")
 const request = require('request');
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
@@ -60,4 +60,5 @@ var executeIntervall = setInterval(function() {     // method for repeating requ
     });
 }, config.time);  // execute time intervall
 
-    start();
+    // starting the webserver for displaying the weather data
+    start_webserver();
