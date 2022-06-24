@@ -1,3 +1,134 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
     background-color: #121723;
+}
+
+.image-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('');
+    height: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.hero-text button:hover {
+    background-color: #555;
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    .hero-text {
+        top: 47%;
+    }
+    .image-home {
+        height: 120%;
+    }
+}
+
+.wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.b{
+    display: block;
+    width: 300px;
+    height: 44px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid rgb(119, 133, 169);
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+}
+
+.b span{
+    position: relative;
+    z-index: 2;
+}
+
+.b:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(119, 133, 169);
+    transition: all .35s;
+}
+
+.b:hover{
+    color: #fff;
+}
+
+.b:hover:after{
+    width: 100%;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 1rem;
+}
+ol.gradient-list-2 {
+    counter-reset: gradient-counter;
+    list-style: none;
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+ol.gradient-list-2 > li {
+    background: rgba(87, 94, 108, 0.35);
+    color: white;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    min-height: 3rem;
+    padding: 1rem 1rem 1rem 1rem;
+    position: relative;
+}
+ol.gradient-list-2 > li::before {
+    align-items: flex-end;
+    color: white;
+    display: flex;
+    font: 900 1.5em/1 'Montserrat';
+    justify-content: flex-end;
+    padding: 0.125em 0.25em;
+    z-index: 1;
 }
