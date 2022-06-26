@@ -3,7 +3,6 @@ const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 const hookcord = require('hookcord');
 const request = require('request');
 
-
 /*
 function for sending the discord webhook
  */
@@ -72,13 +71,6 @@ function api_request() {
     let id = config.id;
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&id${id}=&units=metric&lang=de&appid=${apiKey}`  // api request link
 
-
-    console.log("______________________________________")
-    console.log("Application started...")
-    console.log("Name: discord-weather-report")
-    console.log("Author: AAWA-byt")
-    console.log(new Date());
-
         request(url, function (err, response, body) {
 
             if (err) {
@@ -116,8 +108,6 @@ function api_request() {
             }
 
             console.log("[WeatherAPI] Request was succesfully >> " + new Date());
-            console.log("______________________________________")  // log when request is done + date
-
         });
 }
 
