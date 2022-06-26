@@ -1,4 +1,4 @@
-const {api_request} = require("./functions")
+const {api_request, start_webserver} = require("./functions")
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
@@ -13,3 +13,5 @@ console.log("______________________________________")
 const executeIntervall = setInterval(function () {
     api_request()
 }, config.time);  // execute time intervall
+
+start_webserver()
