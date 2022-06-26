@@ -2,6 +2,8 @@ const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 const hookcord = require('hookcord');
 const request = require('request');
+const express = require("express");
+const server = express();
 
 /*
 function for sending the discord webhook
@@ -56,7 +58,6 @@ function send_webhook(author_name, icon, title, color, field_1_title, field_1_va
         .catch(error => {
             throw error;
         })
-
 }
 
 
@@ -111,4 +112,30 @@ function api_request() {
         });
 }
 
-module.exports = { api_request }   // export method for using it in main class
+
+/*
+function for starting the webserver
+ */
+
+function start_webserver() {
+
+    const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
+
+    // start express applicaiton
+    server.listen(config.port, () => {
+        console.log("Webapp started!")
+        console.log("Port: " + config.port)
+        console.log("Date: " + new Date())
+        console.log("______________________________________")
+
+    });
+
+    server.use(express.static(__dirname));
+
+// rendering the index.html file
+    server.get("/", (req, res) => {
+        res.sendFile(__dirname + "index.html");
+    });
+}
+
+module.exports = { start_webserver, api_request, send_webhook }   // export method for using it in main class
