@@ -26,7 +26,7 @@ create an free account on https://openweathermap.org/ and generate an API Key.
 
 Clone the project on your device and open the *config.json*. Put in the discord webhook (discord.com/api/webhooks/*username*/**secret**)your API Key, city name and the city id. 
 You can find the citys on https://openweathermap.org and the id in the website url. Now you only need to choose an intervall how often the application 
-sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an hour). After that you can run the **main.js** with Node.js.
+sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an hour). After that you can run the **app.js** with Node.js.
 
 ![2022-03-27 19_13_09-Сurrent weather and forecast - OpenWeatherMap – Opera](https://user-images.githubusercontent.com/76434239/160296018-b4b0d9bc-e1ef-4913-8c40-453ecb6da670.png)
 
