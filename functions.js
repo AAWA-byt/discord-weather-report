@@ -1,37 +1,7 @@
-const express = require("express");
-const functions = express();
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 const hookcord = require('hookcord');
-
-/*
-function for starting the webserver
- */
-
-function start_webserver() {
-
-    const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
-
-    // start express applicaiton
-    functions.listen(config.webapp_port, () => {
-        console.log("______________________________________")
-        console.log("Webapp started!")
-        console.log("Port: " + config.webapp_port)
-        console.log("Date: " + new Date())
-        console.log("______________________________________")
-
-    });
-
-    functions.use(express.static(__dirname));
-
-// rendering the index.html file
-    functions.get("/", (req, res) => {
-        res.sendFile(__dirname + "index.html");
-    });
-}
-
-module.exports = { start_webserver }   // export method for using it in main class
-
+const request = require('request');
 
 
 /*
@@ -90,4 +60,65 @@ function send_webhook(author_name, icon, title, color, field_1_title, field_1_va
 
 }
 
-module.exports = { send_webhook }   // export method for using it in main class
+
+/*
+function for api request
+ */
+
+function api_request() {
+
+    let apiKey = config.key;
+    let city = config.city;
+    let id = config.id;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&id${id}=&units=metric&lang=de&appid=${apiKey}`  // api request link
+
+
+    console.log("______________________________________")
+    console.log("Application started...")
+    console.log("Name: discord-weather-report")
+    console.log("Author: AAWA-byt")
+    console.log(new Date());
+
+        request(url, function (err, response, body) {
+
+            if (err) {
+                console.log('error:', error);
+            } else {
+
+                // request data from weather api
+                let weather = JSON.parse(body)
+                let temp = `${weather.main.temp}`
+                let like = `${weather.main.feels_like}`
+                let vis = `${weather.visibility}`
+                let clouds = `${weather.clouds.all}`
+                let wind = `${weather.wind.speed}`
+
+                // input data and send discord webhook
+                send_webhook("Weather", "https://w7.pngwing.com/pngs/635/774/png-transparent-cartoon-sun-sun-artwokr-text-smiley-cartoon-sun-thumbnail.png", "Weather report :white_sun_small_cloud:", "1752220",
+                    "City :classical_building:", city,
+                    "Current temperatur :thermometer:", temp + " Degree",
+                    "Feels like :cold_face:", like + " Degree",
+                    "Visibility :foggy:", vis + "m",
+                    "Cloudiness :cloud:", clouds + "%",
+                    "Wind speed :wind_blowing_face: ", wind + "m/s")
+
+                let raw_data = {
+                    temp: "" + temp,
+                    like: "" + like,
+                    vis: "" + vis,
+                    clouds: "" + clouds,
+                    wind: "" + wind
+                }
+
+                // write data from api request into json file
+                let data = JSON.stringify(raw_data);
+                fs.writeFileSync('data.json', data);
+            }
+
+            console.log("[WeatherAPI] Request was succesfully >> " + new Date());
+            console.log("______________________________________")  // log when request is done + date
+
+        });
+}
+
+module.exports = { api_request }   // export method for using it in main class
