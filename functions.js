@@ -13,7 +13,7 @@ function for sending the discord webhook
 function send_webhook(author_name, icon, title, color, field_1_title, field_1_value, field_2_title, field_2_value, field_3_title, field_3_value, field_4_title, field_4_value, field_5_title, field_5_value, field_6_title, field_6_vaule) {
 
     const Hook = new hookcord.Hook()
-    var time = new Date()
+    const time = new Date();
 
     Hook.login(config.username, config.secret);     // login to discord webhook with config data
     Hook.setPayload({
@@ -55,7 +55,7 @@ function send_webhook(author_name, icon, title, color, field_1_title, field_1_va
     })
 
     Hook.fire()
-        .then(response_object => {  })
+        .then(() => {  })
         .catch(error => {
             throw error;
         })
@@ -90,7 +90,7 @@ function api_request() {
                 // input data and send discord webhook
                 send_webhook("Weather", "https://w7.pngwing.com/pngs/635/774/png-transparent-cartoon-sun-sun-artwokr-text-smiley-cartoon-sun-thumbnail.png", "Weather report :white_sun_small_cloud:", "1752220",
                     "City :classical_building:", city,
-                    "Current temperatur :thermometer:", temp + " Degree",
+                    "Current temperature :thermometer:", temp + " Degree",
                     "Feels like :cold_face:", like + " Degree",
                     "Visibility :foggy:", vis + "m",
                     "Cloudiness :cloud:", clouds + "%",
@@ -109,7 +109,7 @@ function api_request() {
                 fs.writeFileSync('./public/assets/data.json', data);
             }
 
-            console.log("[WeatherAPI] Request was succesfully >> " + new Date());
+            console.log("[WeatherAPI] Request was successfully >> " + new Date());
         });
 }
 
@@ -124,7 +124,7 @@ function start_webserver() {
 
     app.use(express.static(path.join(__dirname, 'public')));
 
-    // start express applicaiton
+    // start express application
     app.listen(config.port, () => {
         console.log("Webapp started!")
         console.log("Port: " + config.port)
