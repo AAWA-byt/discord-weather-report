@@ -76,7 +76,7 @@ function api_request() {
         request(url, function (err, response, body) {
 
             if (err) {
-                console.log('error:', error);
+                console.log('error:', err);
             } else {
 
                 // request data from weather api
