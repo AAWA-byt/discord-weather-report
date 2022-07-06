@@ -2,8 +2,9 @@ const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 const hookcord = require('hookcord');
 const request = require('request');
+const path = require('path');
 const express = require("express");
-const server = express();
+const app = express();
 
 /*
 function for sending the discord webhook
@@ -121,8 +122,10 @@ function start_webserver() {
 
     const config = JSON.parse(fs.readFileSync('config.json', 'utf8'))
 
+    app.use(express.static(path.join(__dirname, 'public')));
+
     // start express applicaiton
-    server.listen(config.port, () => {
+    app.listen(config.port, () => {
         console.log("Webapp started!")
         console.log("Port: " + config.port)
         console.log("Date: " + new Date())
@@ -130,11 +133,9 @@ function start_webserver() {
 
     });
 
-    server.use(express.static(__dirname));
-
 // rendering the index.html file
-    server.get("/", (req, res) => {
-        res.sendFile(__dirname + "index.html");
+    app.get('/', (req, res) => {
+        res.sendFile(`${__dirname}/public/index.html`);
     });
 }
 
