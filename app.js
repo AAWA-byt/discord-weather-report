@@ -12,6 +12,6 @@ console.log("______________________________________")
 
 const executeIntervall = setInterval(function () {
     api_request()
-}, config.time);  // execute time intervall
+}, config.time);  // execute time interval
 
 start_webserver()
