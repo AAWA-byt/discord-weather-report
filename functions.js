@@ -106,7 +106,7 @@ function api_request() {
 
                 // write data from api request into json file
                 let data = JSON.stringify(raw_data);
-                fs.writeFileSync('data.json', data);
+                fs.writeFileSync('./public/assets/data.json', data);
             }
 
             console.log("[WeatherAPI] Request was succesfully >> " + new Date());
