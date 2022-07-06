@@ -7,12 +7,12 @@ A Node JS application that sends a weather report to a discord webhook.
 # Getting Started
 ## Requirements
 - [Node.js](https://nodejs.org/en/download/)
-- [openweathermap Account and API Key](https://openweathermap.org)
+- [openweathermap](https://openweathermap.org) Account and API Key
 - Discord Webhook
 - A city of your choice (id)
 
 Install Node.js on your device, create an webhook on your discord server and 
-create an free account on https://openweathermap.org/ and generate an API Key.
+create an free account on https://openweathermap.org/ and generate an API Key (this project is using the api version 2.5).
 
 ## Discord Webhook
 
