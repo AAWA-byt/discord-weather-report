@@ -1,7 +1,11 @@
 # discord-weather-report
-A Node JS application that sends a weather report to a discord webhook.
+A Node JS application that sends a weather report to a discord webhook and fires up a website to quickly look up the weather data.
 
 ![2022-03-27 18_54_49-test - Discord](https://user-images.githubusercontent.com/76434239/160295729-e75cb5e2-687c-4206-bf15-7c84347184d0.png)
+
+![2022-07-07 00_29_25-Discord Weather Report – Opera](https://user-images.githubusercontent.com/76434239/177654158-f97a9115-c1ab-4c79-843c-ee2c819a4e70.png)
+
+
 
 
 # Getting Started
@@ -32,10 +36,15 @@ sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an 
 
 ![2022-03-27 19_17_12-webscraper-discordwebhook – config json](https://user-images.githubusercontent.com/76434239/160295859-afebe9a8-04b0-41ff-b835-fd37ee143194.png)
 
+## Notice
+You can visit the website with the following adress: "**ip of the device where the project is running**:*port*".
+If you are running the project on your own local device you can visit the website like this "**localhost**:*port*".
+
+
 ## Help
 If there should be any problems please leave an [issue](https://github.com/AAWA-byt/discord-weather-report/issues) or send me an email   <a href="mailto:support@aaronwagner.earth">support@aaronwagner.earth</a>
  and I will look forward to help you.
-
+ 
 
 # Authors
 - AAWA-byt
