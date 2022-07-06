@@ -97,6 +97,7 @@ function api_request() {
                     "Wind speed :wind_blowing_face: ", wind + "m/s")
 
                 let raw_data = {
+                    city: "" + config.city,
                     temp: "" + temp,
                     like: "" + like,
                     vis: "" + vis,
