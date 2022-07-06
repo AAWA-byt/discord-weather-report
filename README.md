@@ -32,9 +32,6 @@ sends the data to the webhook (e.g. *1.000* is one second and *3.600.000* is an 
 
 ![2022-03-27 19_17_12-webscraper-discordwebhook – config json](https://user-images.githubusercontent.com/76434239/160295859-afebe9a8-04b0-41ff-b835-fd37ee143194.png)
 
-## Notice:
-Currently there is a <a href='https://github.com/AAWA-byt/weather-report-website'>website in work</a>, where you can quickly look up weather data without using nodejs or discord.
-
 ## Help
 If there should be any problems please leave an [issue](https://github.com/AAWA-byt/discord-weather-report/issues) or send me an email   <a href="mailto:support@aaronwagner.earth">support@aaronwagner.earth</a>
  and I will look forward to help you.
