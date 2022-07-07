@@ -14,4 +14,10 @@ const executeIntervall = setInterval(function () {
     api_request()
 }, config.time);  // execute time interval
 
-start_webserver()
+if (config.webserver === "true") {
+    start_webserver()
+} else if (config.webserver === "false") {
+    console.log("[WeatherAPI] Webserver is deactivated!")
+} else {
+    console.log("[WeatherAPI] Config error! Please check 'webserver'")
+}
