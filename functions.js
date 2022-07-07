@@ -96,7 +96,8 @@ function api_request() {
                     "Cloudiness :cloud:", clouds + "%",
                     "Wind speed :wind_blowing_face: ", wind + "m/s")
 
-                let raw_data = {
+
+                const raw_data = {
                     city: "" + config.city,
                     temp: "" + temp,
                     like: "" + like,
@@ -106,8 +107,14 @@ function api_request() {
                 }
 
                 // write data from api request into json file
-                let data = JSON.stringify(raw_data);
-                fs.writeFileSync('./public/assets/data.json', data);
+                const data = JSON.stringify(raw_data);
+                fs.writeFile('./public/data.json', data, err1 => {
+                    if (err1) {
+                        console.log('[WeatherAPI] Error writing file', err1)
+                    } else {
+                        console.log('[WeatherAPI] Successfully wrote file')
+                    }
+                })
             }
 
             console.log("[WeatherAPI] Request was successfully >> " + new Date());
