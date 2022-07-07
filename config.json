@@ -6,7 +6,10 @@
   "id": "5128581",
   "time": "",
 
-  "port": "6060"
+  "webserver": "true",
+  "port": "6060",
+
+  "discord": "true"
 }
 
 
