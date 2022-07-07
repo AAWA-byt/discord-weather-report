@@ -88,14 +88,20 @@ function api_request() {
                 let wind = `${weather.wind.speed}`
 
                 // input data and send discord webhook
-                send_webhook("Weather", "https://w7.pngwing.com/pngs/635/774/png-transparent-cartoon-sun-sun-artwokr-text-smiley-cartoon-sun-thumbnail.png", "Weather report :white_sun_small_cloud:", "1752220",
-                    "City :classical_building:", city,
-                    "Current temperature :thermometer:", temp + " Degree",
-                    "Feels like :cold_face:", like + " Degree",
-                    "Visibility :foggy:", vis + "m",
-                    "Cloudiness :cloud:", clouds + "%",
-                    "Wind speed :wind_blowing_face: ", wind + "m/s")
+                if (config.discord === "true") {
+                    send_webhook("Weather", "https://w7.pngwing.com/pngs/635/774/png-transparent-cartoon-sun-sun-artwokr-text-smiley-cartoon-sun-thumbnail.png", "Weather report :white_sun_small_cloud:", "1752220",
+                        "City :classical_building:", city,
+                        "Current temperature :thermometer:", temp + " Degree",
+                        "Feels like :cold_face:", like + " Degree",
+                        "Visibility :foggy:", vis + "m",
+                        "Cloudiness :cloud:", clouds + "%",
+                        "Wind speed :wind_blowing_face: ", wind + "m/s")
 
+                } else if (config.webserver === "false") {
+                    console.log("[WeatherAPI] Discord is deactivated!")
+                } else {
+                    console.log("[WeatherAPI] Config error! Please check 'discord'")
+                }
 
                 const raw_data = {
                     city: "" + config.city,
