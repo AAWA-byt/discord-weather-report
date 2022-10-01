@@ -88,15 +88,22 @@ function api_request() {
                 let wind = `${weather.wind.speed}`
 
                 // input data and send discord webhook
-                send_webhook("Weather", "https://w7.pngwing.com/pngs/635/774/png-transparent-cartoon-sun-sun-artwokr-text-smiley-cartoon-sun-thumbnail.png", "Weather report :white_sun_small_cloud:", "1752220",
-                    "City :classical_building:", city,
-                    "Current temperature :thermometer:", temp + " Degree",
-                    "Feels like :cold_face:", like + " Degree",
-                    "Visibility :foggy:", vis + "m",
-                    "Cloudiness :cloud:", clouds + "%",
-                    "Wind speed :wind_blowing_face: ", wind + "m/s")
+                if (config.discord === "true") {
+                    send_webhook("Weather", "https://w7.pngwing.com/pngs/635/774/png-transparent-cartoon-sun-sun-artwokr-text-smiley-cartoon-sun-thumbnail.png", "Weather report :white_sun_small_cloud:", "1752220",
+                        "City :classical_building:", city,
+                        "Current temperature :thermometer:", temp + " Degree",
+                        "Feels like :cold_face:", like + " Degree",
+                        "Visibility :foggy:", vis + "m",
+                        "Cloudiness :cloud:", clouds + "%",
+                        "Wind speed :wind_blowing_face: ", wind + "m/s")
 
-                let raw_data = {
+                } else if (config.webserver === "false") {
+                    console.log("[WeatherAPI] Discord is deactivated!")
+                } else {
+                    console.log("[WeatherAPI] Config error! Please check 'discord'")
+                }
+
+                const raw_data = {
                     city: "" + config.city,
                     temp: "" + temp,
                     like: "" + like,
@@ -106,8 +113,14 @@ function api_request() {
                 }
 
                 // write data from api request into json file
-                let data = JSON.stringify(raw_data);
-                fs.writeFileSync('./public/assets/data.json', data);
+                const data = JSON.stringify(raw_data);
+                fs.writeFile('./public/data.json', data, err1 => {
+                    if (err1) {
+                        console.log('[WeatherAPI] Error writing file', err1)
+                    } else {
+                        console.log('[WeatherAPI] Successfully wrote file')
+                    }
+                })
             }
 
             console.log("[WeatherAPI] Request was successfully >> " + new Date());
