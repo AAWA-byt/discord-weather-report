@@ -41,11 +41,6 @@ You can visit the website with the following adress: "**ip or domain of the devi
 If you are running the project on your own local device you can visit the website like this "**localhost**:*port*".
 
 
-## Help
-If there should be any problems please leave an [issue](https://github.com/AAWA-byt/discord-weather-report/issues) or send me an email   <a href="mailto:support@aaronwagner.earth">support@aaronwagner.earth</a>
- and I will look forward to help you.
- 
-
 # Authors
 - AAWA-byt
 
